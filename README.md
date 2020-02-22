@@ -1,9 +1,9 @@
 # Final Project
-____
-## Why are you interested in this field/domain?
+
+### Why are you interested in this field/domain?
 - Coronavirus (more formally referred to as novel Coronavirus; or COVID-19) is a large family of viruses that has newly been identified in humans. Coronavirus has proven to be a serious threat to the wellbeing of many people across the world. According to [CNN](https://www.cnn.com/asia/live-news/coronavirus-outbreak-02-19-20-intl-hnk/index.html) of February 19th, 2020 there have been over 2,100 people victims as in mainland China, along with several deaths in other regions. We are interested in tracking this field because it is a genuinely concerning illness and there have been several confirmed cases even in North America.
 
-## What other examples of data driven project have you found related to this domain (share at least 3)?
+### What other examples of data driven project have you found related to this domain (share at least 3)?
 - We came across a collection of databases on [Reddit](https://www.reddit.com/r/datasets/comments/exnzrd/coronavirus_datasets/) in which found several data driven projects.
 - One of the most detailed data driven projects that we came across was from [Johns Hopkins University](https://systems.jhu.edu/research/public-health/ncov/); they created an interactive map that entails many characteristics regarding this virus in a meaningful and interactive way.
 - Another data driven project regarding coronavirus comes from [CDC.gov](https://www.cdc.gov/coronavirus/2019-ncov/locations-confirmed-cases.html). They have created a map showing every location with confirmed cases of this virus as well as specific information regarding cases confirmed in the US (including information regarding whether the disease spread through travel or from person to person).
@@ -22,7 +22,7 @@ ___
 ### How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?
 - The data is collected from researchers at Johns Hopkins University Center for Systems Science and Engineering. The data collected is compiled from the WHO as well as several other official government sources.
 ### How many observations (rows) are in your data?
-- This dataset is being constantly updated but there are several thousand observations (2519 as of 2/21/2020).
+- This dataset is being constantly updated but there are over a thousand observations (1116 as of 2/21/2020).
 ### How many features (columns) are in the data?
 - There are five features in this data (Province/State, Country/Region, Last Update, Confirmed Caes, Deaths, and Recovered Individuals)
 ### What questions (from above) can be answered using the data in this dataset?
