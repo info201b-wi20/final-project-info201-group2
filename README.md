@@ -24,7 +24,7 @@ ___
 ### How many observations (rows) are in your data?
 - This dataset is being constantly updated but there are over a thousand observations (1116 as of 2/21/2020).
 ### How many features (columns) are in the data?
-- There are five features in this data (Province/State, Country/Region, Last Update, Confirmed Caes, Deaths, and Recovered Individuals)
+- There are five features in this data (Province/State, Country/Region, Last Update, Confirmed Case, Deaths, and Recovered Individuals)
 ### What questions (from above) can be answered using the data in this dataset?
 - What is the relationship between the rate of infection and the rate of death?
 - Which regions are the most severely impacted (in terms of death toll)
