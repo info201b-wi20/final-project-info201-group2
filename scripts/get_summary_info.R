@@ -1,7 +1,10 @@
-# A function that takes in a dataset("../data/COVID-19-aggregate.csv")
+# A function that takes in a dataset("../data/1-22-2020 to 2-27-2020 data/
+#                                     02-27-2020.csv")
 # and returns a list of info about it:
 library(dplyr)
 get_summary_info <- function(dataset) {
+  dataset <- read.csv("../data/1-22-2020 to 2-27-2020 data/02-27-2020.csv",
+                      stringsAsFactors = F)
   dataset <- dataset %>%
     filter(!is.na(Confirmed))
   dataset[is.na(dataset)] <- 0
@@ -9,24 +12,12 @@ get_summary_info <- function(dataset) {
   ret <- list()
   ret$length <- length(dataset)
   ret$country_region_affected <- length(unique(dataset$Country.Region))
-  ret$province_state_affected <- dataset %>%
-    mutate(location = paste0(Province.State, ", ", Country.Region)) %>%
-    summarize(number = length(unique(location))) %>%
-    pull(number)
-  ret$total_confirmed <- dataset %>%
-    filter(Date == "2020/2/27") %>%
-    summarize(total = sum(Confirmed, na.rm = T)) %>%
-    pull(total)
-  ret$total_death <- dataset %>%
-    filter(Date == "2020/2/27") %>%
-    summarize(total = sum(Deaths, na.rm = T)) %>%
-    pull(total)
-  ret$total_recovery <- dataset %>%
-    filter(Date == "2020/2/27") %>%
-    summarize(total = sum(Recovered, na.rm = T)) %>%
-    pull(total)
+  ret$province_state_affected <- length(dataset$Province.State)
+  ret$total_confirmed <- sum(Confirmed)
+  ret$total_death <- sum(Deaths)
+  ret$total_recovery <- sum(Recovered)
   ret$most_affected_country_region <- dataset %>%
-    filter(Date == "2020/2/27" & Confirmed == max(Confirmed, na.rm = T)) %>%
+    filter(Confirmed == max(Confirmed)) %>%
     pull(Country.Region)
   return(ret)
 }
