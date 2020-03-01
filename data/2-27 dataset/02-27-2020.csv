@@ -1,0 +1,106 @@
+Province/State,Country/Region,Date,Confirmed,Deaths,Recovered
+Hubei,Mainland China,2020/2/27,65596,2641,23383
+,South Korea,2020/2/27,1766,13,22
+Guangdong,Mainland China,2020/2/27,1347,7,890
+Henan,Mainland China,2020/2/27,1272,20,1068
+Zhejiang,Mainland China,2020/2/27,1205,1,932
+Hunan,Mainland China,2020/2/27,1017,4,804
+Anhui,Mainland China,2020/2/27,989,6,792
+Jiangxi,Mainland China,2020/2/27,934,1,754
+Shandong,Mainland China,2020/2/27,756,6,387
+Diamond Princess cruise ship,Others,2020/2/27,705,4,10
+,Italy,2020/2/27,655,17,45
+Jiangsu,Mainland China,2020/2/27,631,0,498
+Chongqing,Mainland China,2020/2/27,576,6,401
+Sichuan,Mainland China,2020/2/27,534,3,321
+Heilongjiang,Mainland China,2020/2/27,480,13,270
+Beijing,Mainland China,2020/2/27,410,5,248
+Shanghai,Mainland China,2020/2/27,337,3,276
+Hebei,Mainland China,2020/2/27,317,6,274
+Fujian,Mainland China,2020/2/27,296,1,228
+Guangxi,Mainland China,2020/2/27,252,2,161
+,Iran,2020/2/27,245,26,49
+Shaanxi,Mainland China,2020/2/27,245,1,195
+,Japan,2020/2/27,214,4,22
+Yunnan,Mainland China,2020/2/27,174,2,150
+Hainan,Mainland China,2020/2/27,168,5,131
+Guizhou,Mainland China,2020/2/27,146,2,112
+Tianjin,Mainland China,2020/2/27,136,3,102
+Shanxi,Mainland China,2020/2/27,133,0,107
+Liaoning,Mainland China,2020/2/27,121,1,93
+Jilin,Mainland China,2020/2/27,93,1,67
+,Singapore,2020/2/27,93,0,62
+Hong Kong,Hong Kong,2020/2/27,92,2,24
+Gansu,Mainland China,2020/2/27,91,2,81
+Xinjiang,Mainland China,2020/2/27,76,2,43
+Inner Mongolia,Mainland China,2020/2/27,75,0,43
+Ningxia,Mainland China,2020/2/27,72,0,68
+,Germany,2020/2/27,46,0,16
+,Kuwait,2020/2/27,43,0,0
+Unassigned Location (From Diamond Princess),US,2020/2/27,42,0,0
+,Thailand,2020/2/27,40,0,22
+,France,2020/2/27,38,2,11
+,Bahrain,2020/2/27,33,0,0
+Taiwan,Taiwan,2020/2/27,32,1,5
+,Malaysia,2020/2/27,23,0,18
+Qinghai,Mainland China,2020/2/27,18,0,18
+,Vietnam,2020/2/27,16,0,16
+,Spain,2020/2/27,15,0,2
+,UK,2020/2/27,15,0,8
+,United Arab Emirates,2020/2/27,13,0,4
+Macau,Macau,2020/2/27,10,0,8
+From Diamond Princess,Australia,2020/2/27,8,0,0
+,Switzerland,2020/2/27,8,0,0
+British Columbia,Canada,2020/2/27,7,0,3
+,Iraq,2020/2/27,7,0,0
+,Sweden,2020/2/27,7,0,0
+Queensland,Australia,2020/2/27,5,0,1
+"Toronto, ON",Canada,2020/2/27,5,0,2
+New South Wales,Australia,2020/2/27,4,0,4
+Victoria,Australia,2020/2/27,4,0,4
+,Oman,2020/2/27,4,0,0
+,Austria,2020/2/27,3,0,0
+,Croatia,2020/2/27,3,0,0
+,Greece,2020/2/27,3,0,0
+,India,2020/2/27,3,0,3
+,Israel,2020/2/27,3,0,1
+,Philippines,2020/2/27,3,1,1
+South Australia,Australia,2020/2/27,2,0,2
+,Finland,2020/2/27,2,0,1
+,Lebanon,2020/2/27,2,0,0
+,Pakistan,2020/2/27,2,0,0
+,Russia,2020/2/27,2,0,2
+"Chicago, IL",US,2020/2/27,2,0,2
+"Sacramento County, CA",US,2020/2/27,2,0,0
+"San Benito, CA",US,2020/2/27,2,0,0
+"San Diego County, CA",US,2020/2/27,2,0,1
+"Santa Clara, CA",US,2020/2/27,2,0,1
+,Afghanistan,2020/2/27,1,0,0
+,Algeria,2020/2/27,1,0,0
+,Belgium,2020/2/27,1,0,1
+,Brazil,2020/2/27,1,0,0
+,Cambodia,2020/2/27,1,0,1
+"London, ON",Canada,2020/2/27,1,0,1
+,Denmark,2020/2/27,1,0,0
+,Egypt,2020/2/27,1,0,0
+,Estonia,2020/2/27,1,0,0
+,Georgia,2020/2/27,1,0,0
+Tibet,Mainland China,2020/2/27,1,0,1
+,Nepal,2020/2/27,1,0,1
+,Netherlands,2020/2/27,1,0,0
+,North Macedonia,2020/2/27,1,0,0
+,Norway,2020/2/27,1,0,0
+,Romania,2020/2/27,1,0,0
+,San Marino,2020/2/27,1,0,0
+,Sri Lanka,2020/2/27,1,0,1
+"Boston, MA",US,2020/2/27,1,0,0
+"Humboldt County, CA",US,2020/2/27,1,0,0
+"Los Angeles, CA",US,2020/2/27,1,0,0
+"Madison, WI",US,2020/2/27,1,0,0
+"Orange, CA",US,2020/2/27,1,0,0
+"San Antonio, TX",US,2020/2/27,1,0,0
+"Seattle, WA",US,2020/2/27,1,0,1
+"Tempe, AZ",US,2020/2/27,1,0,1
+,,,,,
+,,,,,
+,,,,,
