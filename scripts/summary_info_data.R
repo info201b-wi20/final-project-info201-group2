@@ -6,7 +6,7 @@ rm(list = ls())
 library(dplyr)
 
 # This loads the data, strings are not interpreted as factors
-corona_virus_data <- read.csv("data/2-27 dataset/02-27-2020.csv",
+corona_virus_data <- read.csv("../data/2-27 dataset/02-27-2020.csv",
                               stringsAsFactors = FALSE)
 
 # This is the number Provinces/City & Countries from which data regarding
@@ -22,5 +22,4 @@ total_death_toll <- sum(corona_virus_data$Deaths, na.rm = TRUE)
 # This is the number of people who have recovered from coronavirus as of
 # 02/27/2020
 total_recovered_toll <- sum(corona_virus_data$Recovered, na.rm = TRUE)
-
 

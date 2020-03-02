@@ -16,12 +16,27 @@ summar_info_lst <- get_summary_info(summar_info_df)
 
 ## Introduction Paragrah 
 
+---
+
 Coronavirus (more formally referred to as novel Coronavirus; or COVID-19) is a large family of viruses that has newly been identified in humans. Coronavirus has proven to be a serious threat to the wellbeing of many people across the world. According to CNN of February 19th, 2020 there have been over 2,100 victims in mainland China, along with several deaths in other regions. We are interested in researching this field because it is a genuinely concerning illness and there have been several confirmed cases even in North America. As of March 2nd, 2020 there have been [5 deaths](https://www.kiro7.com/news/local/department-health-confirms-first-coronavirus-death-washington-state/XIDPHMLVOJAAREQ5YCL75367PU/) due to coronavirus in Washington; this further raises concerns as this issue is now impacting our community directly.
 
 ## Summary Information 
 
-The coronavirus has been reported all over the world, with `r summar_info_lst$country_region_affected` countries/regions and `r summar_info_lst$province_state_affected` provinces/states reporting cases. The country/region that was most impacted was `r summar_info_lst$most_affected_country_region`. A total number of `r summar_info_lst$total_confirmed` cases have been reported, and of those `r summar_info_lst$total_recovery` have gone on to recover while `r summar_info_lst$total_death` have died. 
+---
 
+Coronavirus has been reported in many countries, with `r summar_info_lst$country_region_affected` countries/regions and `r summar_info_lst$province_state_affected` provinces/states reporting confirmed cases of the virus. The country/region that was most impacted was `r summar_info_lst$most_affected_country_region`. A total number of `r summar_info_lst$total_confirmed` cases have been reported, and of those `r summar_info_lst$total_recovery` have gone on to recover while `r summar_info_lst$total_death` have died. 
+
+
+## Deaths vs Confirmed Cases Charts
+- There are two plots, one including Hubei, the epicenter of the disease, and one excluding it. The reason why we have chosen this approach is because the severity of the virus is far greater in Hubei, thus making the plot difficult to read for the rest of the values.
+
+---
+
+
+
+## Confirmed Region Plot
+
+---
 
 
 

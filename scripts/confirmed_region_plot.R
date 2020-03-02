@@ -1,3 +1,4 @@
+rm(list = ls())
 library(ggplot2)
 library(dplyr)
 library(ggforce)
@@ -25,4 +26,3 @@ confirmed_region_plot <- ggplot(dataset, aes(x = Country.Region,
   labs(x = "Country/Region",
        y = "# confirmed cases",
        fill = "# deaths")
-

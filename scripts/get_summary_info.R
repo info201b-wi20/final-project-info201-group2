@@ -1,5 +1,6 @@
 # A function that takes in a dataset("../data/2-27 dataset/02-27-2020.csv")
 # and returns a list of info about it:
+rm(list = ls())
 library(dplyr)
 
 get_summary_info <- function(dataset) {
