@@ -1,0 +1,26 @@
+---
+title: "Final Project"
+author: "Matthew Arras"
+date: "3/1/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+source("scripts/get_summary_info.R")
+source("scripts/summary_info_data.R")
+
+```
+
+## Introduction Paragrah 
+
+*********insert intro here************
+
+## Summary Information 
+The coronavirus has been reported all over the world, with [**insert number of countries**] countries and [**insert number of provinces**] provinces reporting cases. The country that was most impacted was [**insert most impacted country**]. A total number of [**insert total number of reported cases**] cases have been reported, and of those [**insert total number of recovered**] have gone on to recover while [**insert total number of deaths**] have died. 
+
+
+(**actual values will come from passing the dataset in the summary_info_data.R script called corona_virus_data into the function get_summary_info() from the get_summary_info.R script.**)
+
+
+
+
