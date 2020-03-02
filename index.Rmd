@@ -1,6 +1,6 @@
 ---
 title: "Midpoint Deliverable"
-author: "Matthew Arras, Kenny Mai, Yuchen Jiao, Gurjot (last name needed)"
+author: "Matthew Arras, Kenny Mai, Yuchen Jiao, Gurjot Bajwa"
 date: "3/1/2020"
 output: html_document
 ---
@@ -16,7 +16,7 @@ summar_info_lst <- get_summary_info(summar_info_df)
 
 ## Introduction Paragrah 
 
-*****insert intro here*****
+Coronavirus (more formally referred to as novel Coronavirus; or COVID-19) is a large family of viruses that has newly been identified in humans. Coronavirus has proven to be a serious threat to the wellbeing of many people across the world. According to CNN of February 19th, 2020 there have been over 2,100 victims in mainland China, along with several deaths in other regions. We are interested in researching this field because it is a genuinely concerning illness and there have been several confirmed cases even in North America. As of March 2nd, 2020 there have been [5 deaths](https://www.kiro7.com/news/local/department-health-confirms-first-coronavirus-death-washington-state/XIDPHMLVOJAAREQ5YCL75367PU/) due to coronavirus in Washington; this further raises concerns as this issue is now impacting our community directly.
 
 ## Summary Information 
 
