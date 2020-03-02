@@ -11,7 +11,7 @@ rm(list = ls())
 # Mainland China because China has the most confirmed cases,
 # so their progress in some way represents the overall progress in curing the virus.
 
-raw_data <- read.csv("data/2-27 dataset/02-27-2020.csv", stringsAsFactors = FALSE)
+raw_data <- read.csv("../data/2-27 dataset/02-27-2020.csv", stringsAsFactors = FALSE)
 
 RecoveredProportion <- raw_data %>%
   filter(Country.Region == "Mainland China") %>%

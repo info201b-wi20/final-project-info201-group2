@@ -24,4 +24,3 @@ chart_including_hubei <- ggplot(corona_virus_data, aes(Deaths, Confirmed)) +
 # makes the data very difficult to read
 chart_excluding_hubei <- ggplot(coronva_virus_data_mod, aes(Deaths, Confirmed)) + 
   geom_point()
-

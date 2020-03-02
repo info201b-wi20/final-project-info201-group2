@@ -22,4 +22,3 @@ total_death_toll <- sum(corona_virus_data$Deaths, na.rm = TRUE)
 # This is the number of people who have recovered from coronavirus as of
 # 02/27/2020
 total_recovered_toll <- sum(corona_virus_data$Recovered, na.rm = TRUE)
-
