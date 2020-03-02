@@ -1,25 +1,29 @@
 ---
-title: "Final Project"
-author: "Matthew Arras"
+title: "Midpoint Deliverable"
+author: "Matthew Arras, Kenny Mai, Yuchen Jiao, Gurjot (last name needed)"
 date: "3/1/2020"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
+summar_info_df <- read.csv("data/2-27 dataset/02-27-2020.csv",
+                              stringsAsFactors = FALSE)
+
 source("scripts/get_summary_info.R")
-source("scripts/summary_info_data.R")
+summar_info_lst <- get_summary_info(summar_info_df)
 
 ```
 
 ## Introduction Paragrah 
 
-*********insert intro here************
+*****insert intro here*****
 
 ## Summary Information 
-The coronavirus has been reported all over the world, with [**insert number of countries**] countries and [**insert number of provinces**] provinces reporting cases. The country that was most impacted was [**insert most impacted country**]. A total number of [**insert total number of reported cases**] cases have been reported, and of those [**insert total number of recovered**] have gone on to recover while [**insert total number of deaths**] have died. 
+
+The coronavirus has been reported all over the world, with `r summar_info_lst$country_region_affected` countries/regions and `r summar_info_lst$province_state_affected` provinces/states reporting cases. The country/region that was most impacted was `r summar_info_lst$most_affected_country_region`. A total number of `r summar_info_lst$total_confirmed` cases have been reported, and of those `r summar_info_lst$total_recovery` have gone on to recover while `r summar_info_lst$total_death` have died. 
 
 
-(**actual values will come from passing the dataset in the summary_info_data.R script called corona_virus_data into the function get_summary_info() from the get_summary_info.R script.**)
+
 
 
 
