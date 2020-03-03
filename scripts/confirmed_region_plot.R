@@ -13,7 +13,7 @@ dataset <- dataset %>%
   summarize(total_confirmed = sum(Confirmed),
             total_death = sum(Deaths)) %>%
   top_n(5, wt = total_confirmed)
-dataset$Country.Region = gsub("\\s", "\n", dataset$Country.Region)
+dataset$Country.Region <- gsub("\\s", "\n", dataset$Country.Region)
 confirmed_region_plot <- ggplot(dataset, aes(x = Country.Region,
                                              y = total_confirmed,
                                              fill = total_death)) +

@@ -10,7 +10,8 @@ output: html_document
 library(knitr)
 source("scripts/get_summary_info.R")
 summar_info_lst <- get_summary_info(read.csv("data/3-02 dataset/03-02-2020.csv",
-                              stringsAsFactors = FALSE))
+  stringsAsFactors = FALSE
+))
 ```
 
 ## Introduction Paragrah 

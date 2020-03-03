@@ -10,7 +10,8 @@ library(knitr)
 rm(list = ls())
 
 raw_data <- read.csv("./data/3-02 dataset/03-02-2020.csv",
-                     stringsAsFactors = F)
+  stringsAsFactors = F
+)
 
 # Organized table showing most to least death by the Coronavirus
 table <- raw_data %>%

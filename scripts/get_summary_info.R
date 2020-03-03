@@ -19,6 +19,3 @@ get_summary_info <- function(dataset) {
     pull(Country.Region)
   return(ret)
 }
-
-
-
