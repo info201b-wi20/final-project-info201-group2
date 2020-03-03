@@ -9,7 +9,11 @@ library(knitr)
 
 rm(list = ls())
 
+<<<<<<< HEAD
 raw_data <- read.csv("data/3-02 dataset/03-02-2020.csv",
+=======
+raw_data <- read.csv("./data/3-02 dataset/03-02-2020.csv",
+>>>>>>> 176f706f4cd8021c9b5e2cbc016172880f49211b
   stringsAsFactors = F
 )
 

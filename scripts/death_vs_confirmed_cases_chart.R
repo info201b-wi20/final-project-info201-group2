@@ -9,7 +9,11 @@ library(dplyr)
 library("ggplot2")
 
 # This loads the data as a dataframe, strings are not interpreted as factors
+<<<<<<< HEAD
 corona_virus_data <- read.csv("data/3-02 dataset/03-02-2020.csv",
+=======
+corona_virus_data <- read.csv("./data/3-02 dataset/03-02-2020.csv",
+>>>>>>> 176f706f4cd8021c9b5e2cbc016172880f49211b
   stringsAsFactors = FALSE
 )
 
