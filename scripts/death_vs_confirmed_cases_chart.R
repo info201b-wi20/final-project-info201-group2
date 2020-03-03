@@ -9,7 +9,7 @@ library(dplyr)
 library("ggplot2")
 
 # This loads the data as a dataframe, strings are not interpreted as factors
-corona_virus_data <- read.csv("../data/2-27 dataset/02-27-2020.csv",
+corona_virus_data <- read.csv("./data/2-27 dataset/02-27-2020.csv",
                               stringsAsFactors = FALSE)
 
 # This is a copy of the dataframe, excluding the first row

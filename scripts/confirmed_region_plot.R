@@ -3,7 +3,7 @@ library(ggplot2)
 library(dplyr)
 library(ggforce)
 
-dataset <- read.csv("../data/2-27 dataset/02-27-2020.csv",
+dataset <- read.csv("./data/2-27 dataset/02-27-2020.csv",
                     stringsAsFactors = F)
 dataset <- dataset %>%
   filter(!is.na(Confirmed))

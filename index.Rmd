@@ -6,19 +6,19 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-library(knitr)
-summar_info_df <- read.csv("data/2-27 dataset/02-27-2020.csv",
-                              stringsAsFactors = FALSE)
 
+library(knitr)
 source("scripts/get_summary_info.R")
-summar_info_lst <- get_summary_info(summar_info_df)
+summar_info_lst <- get_summary_info(read.csv("data/2-27 dataset/02-27-2020.csv",
+                              stringsAsFactors = FALSE))
 ```
 
 ## Introduction Paragrah 
 
 ---
 
-Coronavirus (more formally referred to as novel Coronavirus; or COVID-19) is a large family of viruses that has newly been identified in humans. Coronavirus has proven to be a serious threat to the wellbeing of many people across the world. According to CNN of February 19th, 2020 there have been over 2,100 victims in mainland China, along with several deaths in other regions. We are interested in researching this field because it is a genuinely concerning illness and there have been several confirmed cases even in North America. As of March 2nd, 2020 there have been [5 deaths](https://www.kiro7.com/news/local/department-health-confirms-first-coronavirus-death-washington-state/XIDPHMLVOJAAREQ5YCL75367PU/) due to coronavirus in Washington; this further raises concerns as this issue is now impacting our community directly.
+Coronavirus (more formally referred to as novel Coronavirus; or COVID-19) is a large family of viruses that has newly been identified in humans. Coronavirus has proven to be a serious threat to the wellbeing of many people across the world. According to [CNN](https://www.cnn.com/asia/live-news/coronavirus-outbreak-02-19-20-intl-hnk/index.html) of February 19th, 2020 there have been over 2,100 victims in mainland China, along with several deaths in other regions. We are interested in researching this field because it is a genuinely concerning illness and there have been several confirmed cases even in North America. As of March 2nd, 2020 there have been [5 deaths](https://www.kiro7.com/news/local/department-health-confirms-first-coronavirus-death-washington-state/XIDPHMLVOJAAREQ5YCL75367PU/) due to coronavirus in Washington; this further raises concerns as this issue is now impacting our community directly.
+
 
 ## Summary Information 
 
@@ -26,37 +26,62 @@ Coronavirus (more formally referred to as novel Coronavirus; or COVID-19) is a l
 
 Coronavirus has been reported in many countries, with `r summar_info_lst$country_region_affected` countries/regions and `r summar_info_lst$province_state_affected` provinces/states reporting confirmed cases of the virus. The country/region that was most impacted was `r summar_info_lst$most_affected_country_region`. A total number of `r summar_info_lst$total_confirmed` cases have been reported, and of those `r summar_info_lst$total_recovery` have gone on to recover while `r summar_info_lst$total_death` have died. 
 
-
 ## Summary Table 
 
 The table organizes the data showing most to least death by the Coronavirus by 2/27/2020.
 
-```{r table, echo = FALSE}
-# Plots the data in an organized table format
+```{r table, include = FALSE}
 source("scripts/death_count_table.R")
-kable(table, col.names = c("Region", "Total Deaths"))
 ```
-
-
-## Deaths vs Confirmed Cases Charts
-- There are two plots, one including Hubei, the epicenter of the disease, and one excluding it. The reason why we have chosen this approach is because the severity of the virus is far greater in Hubei, thus making the plot difficult to read for the rest of the values.
-
----
-
-
+`r table_done`
 
 ## Confirmed Region Plot
 
 ---
 
+This is a plot of regions in which there have been confirmed cases of coronavirus
+
+```{r confirmed_region_plot, include = FALSE, warning=FALSE}
+source("scripts/confirmed_region_plot.R")
+```
+```{r confirmed_region_plot2, include = TRUE, echo = FALSE, warning=FALSE}
+confirmed_region_plot
+```
 
 ## The recovered proportion Charts
 
+---
+
 The chart looks at the percentage of people recovering from covid-19 in 2010
 Mainland China because China has the most confirmed cases, so their progress in some way represents the overall progress in curing the virus.
-```{r chart, echo = FALSE}
+```{r recoveredProportion_Plot, include = FALSE, echo = FALSE}
 # Plots the data in an organized table format
 source("scripts/recoveredProportion_Plot.R")
-kable(pie_chart)
+```
+```{r piechart, include = TRUE, echo = FALSE, warning = FALSE}
+# Plots the data in an organized table format
+pie_chart
+```
+
+## Deaths vs Confirmed Cases Charts
+
+---
+There are two plots, one including Hubei, the epicenter of the disease, and one excluding it. The reason why we have chosen this approach is because the severity of the virus is far greater in Hubei, thus making the plot difficult to read for the rest of the values.
+
+
+```{r death_vs_confirmed_cases_chart, include = FALSE, warning = FALSE}
+source("scripts/death_vs_confirmed_cases_chart.R")
+```
+
+- This is the plot which includes the data from Hubei
+```{r plot_including_hubei, include = TRUE, echo = FALSE, warning = FALSE}
+source("scripts/death_vs_confirmed_cases_chart.R")
+chart_including_hubei
+```
+
+- This is the plot which excldues the data from Hubei
+```{r plot_excluding_hubei, include = TRUE, echo = FALSE, warning = FALSE}
+source("scripts/death_vs_confirmed_cases_chart.R")
+chart_excluding_hubei
 ```
 
