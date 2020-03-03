@@ -47,7 +47,7 @@ This is a plot of regions in which there have been confirmed cases of coronaviru
 ```{r confirmed_region_plot, include = FALSE, warning=FALSE}
 source("scripts/confirmed_region_plot.R")
 ```
-```{r confirmed_region_plot2, include = TRUE, echo = FALSE, warning=FALSE}
+```{r confirmed_region_plot2, fig.width = 10, fig.asp = .62, include = TRUE, echo = FALSE, warning=FALSE}
 confirmed_region_plot
 ```
 

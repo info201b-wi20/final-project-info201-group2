@@ -20,7 +20,7 @@ dataset1 <- dataset %>%
   ) %>%
   top_n(5, wt = total_confirmed)
 
-dataset1$Country.Region <- gsub("\\s", "\n", dataset1$Country.Region)
+dataset1[["Country.Region"]] <- gsub("\\s", "\n", dataset1$Country.Region)
 
 max_country <- dataset %>%
   group_by(Country.Region) %>%
