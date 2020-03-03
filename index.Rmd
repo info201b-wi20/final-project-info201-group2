@@ -17,7 +17,7 @@ summar_info_lst <- get_summary_info(read.csv("data/3-02 dataset/03-02-2020.csv",
 
 ---
 
-Coronavirus (more formally referred to as novel Coronavirus; or COVID-19) is a large family of viruses that has newly been identified in humans. Coronavirus has proven to be a serious threat to the wellbeing of many people across the world. According to [CNN](https://www.cnn.com/asia/live-news/coronavirus-outbreak-03-02-20-intl-hnk/index.html) of March 2nd, 2020 there have been over 3,000 victims globally. We are interested in researching this field because it is a genuinely concerning illness and there have been several confirmed cases even in North America. As of March 2nd, 2020 there have been [5 deaths](https://www.kiro7.com/news/local/department-health-confirms-first-coronavirus-death-washington-state/XIDPHMLVOJAAREQ5YCL75367PU/) due to coronavirus in Washington; this further raises concerns as this issue is now impacting our community directly.
+Coronavirus (more formally referred to as novel Coronavirus; or COVID-19) is a large family of viruses that has newly been identified in humans. Coronavirus has proven to be a serious threat to the wellbeing of many people across the world. According to [CNN](https://www.cnn.com/asia/live-news/coronavirus-outbreak-03-02-20-intl-hnk/index.html) of March 2nd, 2020 there have been over 3,000 victims globally. We are interested in researching this field because it is a genuinely concerning illness and there have been several confirmed cases even in North America. As of March 2nd, 2020 there have been [5 deaths](https://www.kiro7.com/news/local/department-health-confirms-first-coronavirus-death-washington-state/XIDPHMLVOJAAREQ5YCL75367PU/) due to coronavirus in Washington; this further raises concerns as this issue is now impacting our community directly. So we gather information and datasets from [2019-nCoV Data Repository by Johns Hopkins CSSE](https://github.com/CSSEGISandData/2019-nCoV) and generate this report.
 
 
 ## Summary Information 
@@ -28,18 +28,20 @@ Coronavirus has been reported in many countries, with `r summar_info_lst$country
 
 ## Summary Table 
 
-The table organizes the data showing most to least death by the Coronavirus by 3/02/2020.
+The lost of lives will always make people be anxious. So we choose to aggregate and display the data of total deaths caused by coronavirus in each country/region. The table organizes the data showing most to least death by the Coronavirus by 3/02/2020.
 
 ```{r table, include = FALSE}
 source("scripts/death_count_table.R")
 ```
 `r table_done`
 
+As we can see, most of the deaths occur in *four* countries: **`r top_4_country`**. However, people in other countries/regions should maintain vigilance to prevent such tragedies from happening again.
+
 ## Confirmed Region Plot
 
 ---
 
-This is a plot of regions in which there have been confirmed cases of coronavirus
+This is a plot of regions in which there have been confirmed cases of coronavirus. We choose *5 most affected* countries/regions(i.e., the country/region has the greatest number of confirmed cases) to display how serious this coronavirus could be. The *Other* in the plot stands for *Diamond Princess Cruis*.
 
 ```{r confirmed_region_plot, include = FALSE, warning=FALSE}
 source("scripts/confirmed_region_plot.R")
@@ -47,6 +49,8 @@ source("scripts/confirmed_region_plot.R")
 ```{r confirmed_region_plot2, include = TRUE, echo = FALSE, warning=FALSE}
 confirmed_region_plot
 ```
+
+The chart shows that although most of the confirmed cases occur in `r max_country`, the number of confirmed cases in other countries/regions are also high. So everyone of us should be aware of the severity of the virus and take care of themselves.
 
 ## The recovered proportion Charts
 
@@ -63,11 +67,12 @@ source("scripts/recoveredProportion_Plot.R")
 pie_chart
 ```
 
+The pie chart shows that the recovered proportion in Mainland China has increased th more than one halve, which is a great news.
+
 ## Deaths vs Confirmed Cases Charts
 
 ---
 There are two plots, one including Hubei, the epicenter of the disease, and one excluding it. The reason why we have chosen this approach is because the severity of the virus is far greater in Hubei, thus making the plot difficult to read for the rest of the values.
-
 
 ```{r death_vs_confirmed_cases_chart, include = FALSE, warning = FALSE}
 source("scripts/death_vs_confirmed_cases_chart.R")
@@ -85,3 +90,4 @@ source("scripts/death_vs_confirmed_cases_chart.R")
 chart_excluding_hubei
 ```
 
+From the chart, we can find that most of the dots occur at the lower left part of the graph, which implies that the proportion of deaths in confirmed cases is relatively low, which is also a good news to us.
