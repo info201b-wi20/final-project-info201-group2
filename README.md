@@ -1,6 +1,6 @@
 # Final Project
 
-# Midpoint Deliverable Link
+### Midpoint Deliverable Link
 
 https://info201b-wi20.github.io/a5--flashinglightz/
 
