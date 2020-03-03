@@ -3,7 +3,7 @@ library(ggplot2)
 library(dplyr)
 library(ggforce)
 
-dataset <- read.csv("data/3-02 dataset/03-02-2020.csv",
+dataset <- read.csv("./data/3-02 dataset/03-02-2020.csv",
   stringsAsFactors = F
 )
 
@@ -19,7 +19,6 @@ dataset1 <- dataset %>%
     total_death = sum(Deaths)
   ) %>%
   top_n(5, wt = total_confirmed)
-<<<<<<< HEAD
 
 dataset1$Country.Region <- gsub("\\s", "\n", dataset1$Country.Region)
 
@@ -37,12 +36,6 @@ confirmed_region_plot <- ggplot(dataset1, aes(
   y = total_confirmed,
   fill = total_death
 )) +
-=======
-dataset$Country.Region <- gsub("\\s", "\n", dataset$Country.Region)
-confirmed_region_plot <- ggplot(dataset, aes(x = Country.Region,
-                                             y = total_confirmed,
-                                             fill = total_death)) +
->>>>>>> 176f706f4cd8021c9b5e2cbc016172880f49211b
   geom_bar(stat = "identity", position = position_dodge()) +
   geom_text(aes(label = total_confirmed),
     vjust = -0.2, color = "black",
