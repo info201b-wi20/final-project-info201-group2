@@ -1,7 +1,7 @@
 ---
 title: "Midpoint Deliverable"
 author: "Matthew Arras, Kenny Mai, Yuchen Jiao, Gurjot Bajwa"
-date: "3/1/2020"
+date: "03/02/2020"
 output: html_document
 ---
 
@@ -9,7 +9,7 @@ output: html_document
 
 library(knitr)
 source("scripts/get_summary_info.R")
-summar_info_lst <- get_summary_info(read.csv("data/2-27 dataset/02-27-2020.csv",
+summar_info_lst <- get_summary_info(read.csv("data/3-02 dataset/03-02-2020.csv",
                               stringsAsFactors = FALSE))
 ```
 
@@ -17,7 +17,7 @@ summar_info_lst <- get_summary_info(read.csv("data/2-27 dataset/02-27-2020.csv",
 
 ---
 
-Coronavirus (more formally referred to as novel Coronavirus; or COVID-19) is a large family of viruses that has newly been identified in humans. Coronavirus has proven to be a serious threat to the wellbeing of many people across the world. According to [CNN](https://www.cnn.com/asia/live-news/coronavirus-outbreak-02-19-20-intl-hnk/index.html) of February 19th, 2020 there have been over 2,100 victims in mainland China, along with several deaths in other regions. We are interested in researching this field because it is a genuinely concerning illness and there have been several confirmed cases even in North America. As of March 2nd, 2020 there have been [5 deaths](https://www.kiro7.com/news/local/department-health-confirms-first-coronavirus-death-washington-state/XIDPHMLVOJAAREQ5YCL75367PU/) due to coronavirus in Washington; this further raises concerns as this issue is now impacting our community directly.
+Coronavirus (more formally referred to as novel Coronavirus; or COVID-19) is a large family of viruses that has newly been identified in humans. Coronavirus has proven to be a serious threat to the wellbeing of many people across the world. According to [CNN](https://www.cnn.com/asia/live-news/coronavirus-outbreak-03-02-20-intl-hnk/index.html) of March 2nd, 2020 there have been over 3,000 victims globally. We are interested in researching this field because it is a genuinely concerning illness and there have been several confirmed cases even in North America. As of March 2nd, 2020 there have been [5 deaths](https://www.kiro7.com/news/local/department-health-confirms-first-coronavirus-death-washington-state/XIDPHMLVOJAAREQ5YCL75367PU/) due to coronavirus in Washington; this further raises concerns as this issue is now impacting our community directly.
 
 
 ## Summary Information 
@@ -28,7 +28,7 @@ Coronavirus has been reported in many countries, with `r summar_info_lst$country
 
 ## Summary Table 
 
-The table organizes the data showing most to least death by the Coronavirus by 2/27/2020.
+The table organizes the data showing most to least death by the Coronavirus by 3/02/2020.
 
 ```{r table, include = FALSE}
 source("scripts/death_count_table.R")

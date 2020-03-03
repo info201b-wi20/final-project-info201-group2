@@ -9,10 +9,7 @@ library(knitr)
 
 rm(list = ls())
 
-#raw_data <- read.csv("C:/Users/Gurjot/Desktop/final-project-info201-group2/data/2-27 dataset/02-27-2020.csv",
-#                   stringsAsFactors = F)
-
-raw_data <- read.csv("./data/2-27 dataset/02-27-2020.csv",
+raw_data <- read.csv("./data/3-02 dataset/03-02-2020.csv",
                      stringsAsFactors = F)
 
 # Organized table showing most to least death by the Coronavirus
