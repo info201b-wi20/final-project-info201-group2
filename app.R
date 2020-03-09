@@ -1,0 +1,10 @@
+library("dplyr")
+library("leaflet")
+library("shiny")
+library("ggplot2")
+library("plotly")
+source("my_server.R")
+source("my_ui.R")
+
+options(shiny.trace = TRUE)
+shinyApp(ui = my_ui, server = my_server)
