@@ -1,10 +1,11 @@
 library(dplyr)
 library(shiny)
 
+coronavirus_dataset <- read.csv("data/3-07 dataset/report-3-07-20.csv",
+                                stringsAsFactors = FALSE
+)
+
 my_server <- function(input, output, session) {
-  coronavirus_dataset <- read.csv("data/3-07 dataset/report-3-07-20.csv",
-    stringsAsFactors = FALSE
-  )
 
   map <- leaflet(data = coronavirus_dataset) %>%
     addProviderTiles("Stamen.TonerLite") %>% # add Stamen Map Tiles
