@@ -78,7 +78,7 @@ my_ui <- fluidPage(
         circumstances under which the virus has spread on a case
         to case basis."
       ),
-      ),
+    ),
 
     tabPanel(
       "Coronavirus Map",
@@ -95,10 +95,8 @@ my_ui <- fluidPage(
     tabPanel(
       "Interactive Page #2",
       sidebarLayout(
-        sidebarPanel(
-        ),
-        mainPanel(
-        )
+        sidebarPanel(),
+        mainPanel()
       ),
     ),
 
@@ -128,10 +126,8 @@ my_ui <- fluidPage(
     tabPanel(
       "Summary Information",
       sidebarLayout(
-        sidebarPanel(
-        ),
-        mainPanel(
-        )
+        sidebarPanel(),
+        mainPanel()
       ),
     )
   )
