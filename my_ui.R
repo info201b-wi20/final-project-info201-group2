@@ -24,11 +24,13 @@ my_ui <- fluidPage(
       ),
     
     tabPanel(
-      "Interactive Page #1",
+      "Coronavirus Map",
       sidebarLayout(
         sidebarPanel(
+          "Insert Sidebar Widget Here"
         ),
         mainPanel(
+          leafletOutput("myMap"),
         )
       ),
     ),
