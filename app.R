@@ -7,5 +7,5 @@ library("tidyverse")
 source("my_server.R")
 source("my_ui.R")
 
-options(shiny.trace = TRUE)
+options(shiny.trace = F)
 shinyApp(ui = my_ui, server = my_server)

@@ -8,14 +8,14 @@ my_server <- function(input, output, session) {
 
   map <- leaflet(data = coronavirus_dataset) %>%
     addProviderTiles("Stamen.TonerLite") %>% # add Stamen Map Tiles
-    addCircleMarkers( # add markers for each shooting
+    addCircleMarkers(# add markers for each shooting
       lat = ~Latitude,
       lng = ~Longitude,
       fillOpacity = .7,
       radius = ~Deaths,
       stroke = FALSE
     )
-  output$myMap <- renderLeaflet(map)
+  output$my_map <- renderLeaflet(map)
 
   observeEvent(
     input$country_region,
@@ -52,10 +52,17 @@ my_server <- function(input, output, session) {
       )
     data4 <- left_join(data2, data3, by = "category")
 
+    if (input$province_state == "") {
+      location <- input$country_region
+    } else {
+      location <- paste0(input$province_state, ", ", input$country_region)
+    }
     plot_ly(
       data = data4, type = "pie", labels = ~category,
       values = ~percent,
       hovertemplate = paste("%{label} number: ", data4$number)
-    )
+    ) %>%
+      layout(title = paste0("Percentage of Death & Recovery in ",
+                            location))
   })
 }

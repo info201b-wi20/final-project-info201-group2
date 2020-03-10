@@ -89,7 +89,7 @@ my_ui <- fluidPage(
           "Insert Sidebar Widget Here"
         ),
         mainPanel(
-          leafletOutput("myMap"),
+          leafletOutput("my_map"),
         )
       ),
     ),
