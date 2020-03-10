@@ -3,6 +3,7 @@ library("leaflet")
 library("shiny")
 library("ggplot2")
 library("plotly")
+library("tidyverse")
 source("my_server.R")
 source("my_ui.R")
 

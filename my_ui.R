@@ -8,22 +8,23 @@ my_ui <- fluidPage(
     tabPanel(
       "Project Overview",
       h1("Coronavirus"),
-      tags$img(src = "https://storage.aanp.org/www/images/news-feed/_large/Coronavirus.png"),
+      tags$img(src = "https://storage.aanp.org/www/images/news-feed/
+               _large/Coronavirus.png"),
       p("Coronavirus (more formally referred to as novel Coronavirus;
         or COVID-19) is a large family of viruses that has newly
         been identified in humans. Coronavirus has proven to be
-        a serious threat to the wellbeing of many people across 
+        a serious threat to the wellbeing of many people across
         the world. According to CNN as of March 9th, 2020 there
         have been over 3,800 victims
         globally. We are interested in researching this field
         because it is a genuinely concerning illness and there
         have been several confirmed cases even in North America.
-        As of March 9th, 2020 there have been over 20 deaths due to 
+        As of March 9th, 2020 there have been over 20 deaths due to
         coronavirus in Washington; this further
         raises concerns as this issue is now impacting our community
         directly."),
-      
-      h2("What questions are we aiming to answer?"), 
+
+      h2("What questions are we aiming to answer?"),
       p(
         "How is the lethality of the virus change over time"
       ),
@@ -35,21 +36,21 @@ my_ui <- fluidPage(
         is spreading more influential?"
       ),
       p(
-        "When does the infectiousness of the virus reach the 
-        maximum? Has the rate at which it spreading it 
-        already reached its peak (based on the given data) 
+        "When does the infectiousness of the virus reach the
+        maximum? Has the rate at which it spreading it
+        already reached its peak (based on the given data)
         or is it continuing to become more extreme."
       ),
-      h2("From where did we collect our data?"), 
-      
+      h2("From where did we collect our data?"),
+
       p(
         "The data is collected from researchers at Johns Hopkins University
         Center for Systems Science and Engineering. The data collected
         is compiled from the WHO as well as several other official
         government sources."
       ),
-      
-      h2("Other projects involving coronavirus that we have come across"), 
+
+      h2("Other projects involving coronavirus that we have come across"),
       p(
         "We came across a collection of databases on Reddit in which found
         several data driven projects."
@@ -79,7 +80,6 @@ my_ui <- fluidPage(
       ),
       ),
 
-    
     tabPanel(
       "Coronavirus Map",
       sidebarLayout(
@@ -91,7 +91,7 @@ my_ui <- fluidPage(
         )
       ),
     ),
-    
+
     tabPanel(
       "Interactive Page #2",
       sidebarLayout(
@@ -101,7 +101,7 @@ my_ui <- fluidPage(
         )
       ),
     ),
-    
+
     tabPanel(
       "Percentage of Death & Recovery",
       titlePanel("Percentage of Death & Recovery in each Province/State"),
@@ -124,7 +124,7 @@ my_ui <- fluidPage(
         )
       ),
     ),
-    
+
     tabPanel(
       "Summary Information",
       sidebarLayout(

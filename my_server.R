@@ -2,22 +2,22 @@ library(dplyr)
 library(shiny)
 
 my_server <- function(input, output, session) {
-  
-  coronavirus_dataset = read.csv("data/3-07 dataset/report-3-07-20.csv",
+
+  coronavirus_dataset <- read.csv("data/3-07 dataset/report-3-07-20.csv",
                      stringsAsFactors = FALSE
   )
 
     map <- leaflet(data = coronavirus_dataset) %>%
       addProviderTiles("Stamen.TonerLite") %>% # add Stamen Map Tiles
-      addCircleMarkers( # add markers for each shooting
+      addCircleMarkers(# add markers for each shooting
         lat = ~Latitude,
         lng = ~Longitude,
         fillOpacity = .7,
         radius = ~Deaths,
         stroke = FALSE
       )
-    output$myMap = renderLeaflet(map)
-    
+    output$myMap <- renderLeaflet(map)
+
     observeEvent(
       input$country_region,
       updateSelectInput(session, "province_state", "Select a province or state",
@@ -25,7 +25,7 @@ my_server <- function(input, output, session) {
                           filter(Country.Region == input$country_region) %>%
                           pull(Province.State))
     )
-    
+
     output$pie <- renderPlotly({
       data1 <- coronavirus_dataset %>%
         filter(Country.Region == input$country_region,
@@ -43,8 +43,8 @@ my_server <- function(input, output, session) {
         gather(key = category,
                value = number)
       data4 <- left_join(data2, data3, by = "category")
-      
-      plot_ly(data = data4, type = 'pie', labels = ~category,
+
+      plot_ly(data = data4, type = "pie", labels = ~category,
               values = ~percent,
               hovertemplate = paste("%{label} number: ", data4$number))
     })
