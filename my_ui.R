@@ -1,3 +1,7 @@
+country_region_list <- coronavirus_dataset %>%
+  arrange(Country.Region) %>%
+  pull(Country.Region)
+
 my_ui <- fluidPage(
   navbarPage(
     "Coronavirus Data",
@@ -46,11 +50,24 @@ my_ui <- fluidPage(
     ),
     
     tabPanel(
-      "Interactive Page #3",
+      "Percentage of Death & Recovery",
+      titlePanel("Percentage of Death & Recovery in each Province/State"),
       sidebarLayout(
         sidebarPanel(
+          selectInput(
+            inputId = "country_region",
+            label = "Select a country or region",
+            choices = country_region_list,
+            selected = country_region_list[1]
+          ),
+          selectInput(
+            inputId = "province_state",
+            label = "Select a province or state",
+            choices = NULL
+          )
         ),
         mainPanel(
+          plotlyOutput("pie")
         )
       ),
     ),
