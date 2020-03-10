@@ -7,20 +7,23 @@ my_ui <- fluidPage(
     "Coronavirus Data",
     tabPanel(
       "Project Overview",
-      h1("Coronavirus"),
+      h1("Coronavirus Research Project"),
       tags$img(
         src =
         "https://storage.aanp.org/www/images/news-feed/_large/Coronavirus.png"
       ),
-      p("Coronavirus (more formally referred to as novel Coronavirus;
+      p(),
+      ("Coronavirus (more formally referred to as novel Coronavirus;
         or COVID-19) is a large family of viruses that has newly
         been identified in humans. Coronavirus has proven to be
         a serious threat to the wellbeing of many people across
-        the world. According to CNN as of March 9th, 2020 there
+        the world. According to "), a("CNN",
+        href="https://www.cnn.com/2020/03/10/world/newsletter-coronavirus-03-10-20-intl/index.html")
+        ,("as of March 9th, 2020 there
         have been over 3,800 victims
         globally. We are interested in researching this field
         because it is a genuinely concerning illness and there
-        have been several confirmed cases even in North America.
+        have been several hundred confirmed cases even in North America.
         As of March 9th, 2020 there have been over 20 deaths due to
         coronavirus in Washington; this further
         raises concerns as this issue is now impacting our community
@@ -28,7 +31,7 @@ my_ui <- fluidPage(
 
       h2("What questions are we aiming to answer?"),
       p(
-        "How is the lethality of the virus change over time"
+        "How is the lethality of the virus change over time?"
       ),
       p(
         "According to several news sources there have been reported cases
@@ -41,7 +44,7 @@ my_ui <- fluidPage(
         "When does the infectiousness of the virus reach the
         maximum? Has the rate at which it spreading it
         already reached its peak (based on the given data)
-        or is it continuing to become more extreme."
+        or is it continuing to become more extreme?"
       ),
       h2("From where did we collect our data?"),
 
@@ -53,26 +56,31 @@ my_ui <- fluidPage(
       ),
 
       h2("Other projects involving coronavirus that we have come across"),
-      p(
-        "We came across a collection of databases on Reddit in which found
-        several data driven projects."
-      ),
-      p(
+      p(),
+      (
         "One of the most detailed data driven projects that we came across
-        was from Johns Hopkins University; they created an interactive map
+        was from"), a("Johns Hopkins University;",
+        href="https://systems.jhu.edu/research/public-health/ncov/"),
+        ("they created an interactive map
         that entails many characteristics regarding this virus in a meaningful
         and interactive way."
       ),
-      p(
-        "Another data driven project regarding coronavirus comes from CDC.gov.
-        They have created a map showing every location with confirmed cases
+      p(),
+      (
+        "Another data driven project regarding coronavirus comes from"),
+        a("CDC.gov.;",
+        href="https://www.cdc.gov/coronavirus/2019-ncov/locations-confirmed-cases.html"),
+        ("They have created a map showing every location with confirmed cases
         of this virus as well as specific information regarding cases
         confirmed in the US (including information regarding whether
         the disease spread through travel or from person to person)."
       ),
-      p(
+      p(),
+      (
         "The third data driven project that we found related to this
-        domain comes from ECDC.Europa.Eu. They have compiled a list
+        domain comes from"), a("ECDC.Europa.Eu;",
+        href="https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases"), 
+        ("They have compiled a list
         of data regarding the distribution of cases geographically
         including information regarding whether the virus was locally
         spread or from other nations (what they refer to as imported
