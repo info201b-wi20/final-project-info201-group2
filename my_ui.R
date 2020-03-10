@@ -8,8 +8,10 @@ my_ui <- fluidPage(
     tabPanel(
       "Project Overview",
       h1("Coronavirus"),
-      tags$img(src = "https://storage.aanp.org/www/images/news-feed/
-               _large/Coronavirus.png"),
+      tags$img(
+        src =
+        "https://storage.aanp.org/www/images/news-feed/_large/Coronavirus.png"
+      ),
       p("Coronavirus (more formally referred to as novel Coronavirus;
         or COVID-19) is a large family of viruses that has newly
         been identified in humans. Coronavirus has proven to be
