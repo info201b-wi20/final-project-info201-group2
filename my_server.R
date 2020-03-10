@@ -1,6 +1,6 @@
 my_server <- function(input, output) {
   
-  coronavirus_dataset = read.csv("data/3-02 dataset/03-02-2020.csv",
+  coronavirus_dataset = read.csv("data/3-07 dataset/report-3-07-20.csv",
                      stringsAsFactors = FALSE
   )
 
