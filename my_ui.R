@@ -3,11 +3,13 @@ library(leaflet)
 library(dplyr)
 
 
-map_data <- read.csv("data/report-3-07-20.csv")
+map_data <- read.csv("data/report-3-07-20.csv", stringsAsFactors = F)
 total_count <- map_data %>%
-  summarize(total_confirmed = sum(Confirmed),
-            total_deaths = sum(Deaths),
-            total_recovered = sum(Recovered))
+  summarize(
+    total_confirmed = sum(Confirmed),
+    total_deaths = sum(Deaths),
+    total_recovered = sum(Recovered)
+  )
 
 country_region_list <- coronavirus_dataset %>%
   arrange(Country.Region) %>%
@@ -18,18 +20,25 @@ my_ui <- fluidPage(
   navbarPage(
     "Coronavirus Data",
     tabPanel(
-
       "Project Overview",
       h1("Coronavirus Research Project"),
-      HTML('<center><img src="https://storage.aanp.org/www/images/news-feed/_large/Coronavirus.png"></center>'),
+      HTML(
+        '<center><img src=
+"https://storage.aanp.org/www/images/
+news-feed/_large/Coronavirus.png"></center>'
+      ),
       p(),
       ("Coronavirus (more formally referred to as novel Coronavirus;
         or COVID-19) is a large family of viruses that has newly
         been identified in humans. Coronavirus has proven to be
         a serious threat to the wellbeing of many people across
         the world. According to "), a("CNN",
-        href="https://www.cnn.com/2020/03/10/world/newsletter-coronavirus-03-10-20-intl/index.html")
-        ,("as of March 9th, 2020 there
+        href = paste0(
+          "https://www.cnn.com/2020/03/10/world/",
+          "newsletter-coronavirus-03-10-20-intl/index.html"
+        )
+      ),
+      ("as of March 9th, 2020 there
         have been over 3,800 victims
         globally. We are interested in researching this field
         because it is a genuinely concerning illness and there
@@ -66,17 +75,22 @@ my_ui <- fluidPage(
       (
         "One of the most detailed data driven projects that we came across
         was from"), a("Johns Hopkins University;",
-        href="https://systems.jhu.edu/research/public-health/ncov/"),
-        ("they created an interactive map
+        href = "https://systems.jhu.edu/research/public-health/ncov/"
+      ),
+      ("they created an interactive map
         that entails many characteristics regarding this virus in a meaningful
         and interactive way."
       ),
       p(),
       (
         "Another data driven project regarding coronavirus comes from"),
-        a("CDC.gov.;",
-        href="https://www.cdc.gov/coronavirus/2019-ncov/locations-confirmed-cases.html"),
-        ("They have created a map showing every location with confirmed cases
+      a("CDC.gov.;",
+        href = paste0(
+          "https://www.cdc.gov/coronavirus/2019-ncov/",
+          "locations-confirmed-cases.html"
+        )
+      ),
+      ("They have created a map showing every location with confirmed cases
         of this virus as well as specific information regarding cases
         confirmed in the US (including information regarding whether
         the disease spread through travel or from person to person)."
@@ -85,8 +99,12 @@ my_ui <- fluidPage(
       (
         "The third data driven project that we found related to this
         domain comes from"), a("ECDC.Europa.Eu;",
-        href="https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases"), 
-        ("They have compiled a list
+        href = paste0(
+          "https://www.ecdc.europa.eu/en/",
+          "geographical-distribution-2019-ncov-cases"
+        )
+      ),
+      ("They have compiled a list
         of data regarding the distribution of cases geographically
         including information regarding whether the virus was locally
         spread or from other nations (what they refer to as imported
@@ -104,24 +122,31 @@ my_ui <- fluidPage(
           div(
             h4("Confirmed Cases")
           ),
-          selectInput(inputId = "country",
-                      label = "Select a country",
-                      choices = list("US" = "US", "China" = "Mainland China",
-                                     "United Kingdoms" = "UK", "Japan" = "Japan",
-                                     "Korea" = "South Korea", "Italy" = "Italy",
-                                     "Iran" = "Iran", "France" = "France",
-                                     "Spain" = "Spain", "Germany" = "Germany")),
+          selectInput(
+            inputId = "country",
+            label = "Select a country",
+            choices = list(
+              "US" = "US", "China" = "Mainland China",
+              "United Kingdoms" = "UK",
+              "Japan" = "Japan",
+              "Korea" = "South Korea", "Italy" = "Italy",
+              "Iran" = "Iran", "France" = "France",
+              "Spain" = "Spain", "Germany" = "Germany"
+            )
+          ),
           selectInput("color_given",
-                      "Choose a color:",
-                      choices = list(
-                        "Red" = "red", "Blue"= "blue",
-                        "Purple" = "purple",
-                        "Black" = "black"
-                      ))
+            "Choose a color:",
+            choices = list(
+              "Red" = "red", "Blue" = "blue",
+              "Purple" = "purple",
+              "Black" = "black"
+            )
+          )
         ),
         mainPanel(
           width = 12,
-          plotlyOutput("confirmed_count"))
+          plotlyOutput("confirmed_count")
+        )
       )
     ),
 
@@ -133,15 +158,20 @@ my_ui <- fluidPage(
           div(
             h4("Global Confirmed Cases")
           ),
-          selectInput(inputId = "select_country",
-                      label = "Select a country",
-                      choices = list("Default" = "default","US" = "US",
-                                     "China" = "Mainland China",
-                                     "United Kingdoms" = "UK", "Japan" = "Japan",
-                                     "Korea" = "South Korea",
-                                     "Italy" = "Italy","Italy" = "Italy",
-                                     "Iran" = "Iran", "France" = "France",
-                                     "Spain" = "Spain", "Germany" = "Germany")),
+          selectInput(
+            inputId = "select_country",
+            label = "Select a country",
+            choices = list(
+              "Default" = "default", "US" = "US",
+              "China" = "Mainland China",
+              "United Kingdoms" = "UK",
+              "Japan" = "Japan",
+              "Korea" = "South Korea",
+              "Italy" = "Italy", "Italy" = "Italy",
+              "Iran" = "Iran", "France" = "France",
+              "Spain" = "Spain", "Germany" = "Germany"
+            )
+          ),
           div(
             strong(textOutput("confirmed_text")),
             br(),
@@ -153,7 +183,9 @@ my_ui <- fluidPage(
         ),
         mainPanel(
           leafletOutput("live_maps"),
-          p("This map display a global cumulated confirmed cases of the COVID-19"))
+          p("This map display a global cumulated confirmed cases of
+            the COVID-19")
+        )
       )
     ),
 
@@ -195,23 +227,21 @@ my_ui <- fluidPage(
           textOutput(outputId = "summ_sb_perc_chosen_country"),
           textOutput(outputId = "state_output")
         ),
-        
+
         mainPanel(
-          h2(textOutput(outputId = "summ_heading_lu")), 
+          h2(textOutput(outputId = "summ_heading_lu")),
           h4(textOutput(outputId = "summ_info_one")),
           p(),
           h2(textOutput(outputId = "summ_heading_two")),
           h4(textOutput(outputId = "map_info_one")),
           h4(textOutput(outputId = "map_info_two")),
-          h4(textOutput(outputId = "map_info_three")), 
+          h4(textOutput(outputId = "map_info_three")),
           h4(textOutput(outputId = "recovery_rate")),
-          h4(textOutput(outputId = "death_rate")), 
-          p(), 
-          h2(textOutput(outputId = "summ_heading_three")), 
-          h4(textOutput(outputId = "rate_death")), 
+          h4(textOutput(outputId = "death_rate")),
+          p(),
+          h2(textOutput(outputId = "summ_heading_three")),
+          h4(textOutput(outputId = "rate_death")),
           h4(textOutput(outputId = "rate_recover"))
-          
-
         )
       ),
     )
