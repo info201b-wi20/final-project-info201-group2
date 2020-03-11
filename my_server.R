@@ -259,8 +259,8 @@ my_server <- function(input, output, session) {
     if (input$country_region %in% country_without_state) {
       message_str <- paste0("Percentage Summary of ", input$country_region)
     } else {
-      paste0("Percentage Summary of ", input$country_region,
-             ", ", input$province_state)
+      paste0("Percentage Summary of ", input$province_state,
+             ", ", input$country_region)
     }
   })
 
