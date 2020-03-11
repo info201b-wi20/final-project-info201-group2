@@ -1,0 +1,27 @@
+
+
+h1{
+  font-family: 'Optima';
+  color: #000000;
+  border:3px solid gray;
+  background-color: #ffffff;
+}
+h2{
+  font-family: 'Optima';
+  color: #000000;
+  border:3px solid gray;
+  background-color: #ffffff; 
+  
+}
+
+body{
+  background-color: #b3b3ff;
+}
+
+p{
+  color: #000000;
+}
+
+tabPanel{
+  background-color: #0000ff;
+}

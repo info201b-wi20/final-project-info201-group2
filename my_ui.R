@@ -3,6 +3,7 @@ country_region_list <- coronavirus_dataset %>%
   pull(Country.Region)
 
 my_ui <- fluidPage(
+  includeCSS("style.css"),
   navbarPage(
     "Coronavirus Data",
     tabPanel(
