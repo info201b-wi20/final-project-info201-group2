@@ -2,8 +2,8 @@ library(shiny)
 library(leaflet)
 library(dplyr)
 
-
 map_data <- read.csv("data/report-3-07-20.csv", stringsAsFactors = F)
+
 total_count <- map_data %>%
   summarize(
     total_confirmed = sum(Confirmed),
@@ -127,8 +127,7 @@ news-feed/_large/Coronavirus.png"></center>'
             label = "Select a country",
             choices = list(
               "US" = "US", "China" = "Mainland China",
-              "United Kingdoms" = "UK",
-              "Japan" = "Japan",
+              "United Kingdoms" = "UK", "Japan" = "Japan",
               "Korea" = "South Korea", "Italy" = "Italy",
               "Iran" = "Iran", "France" = "France",
               "Spain" = "Spain", "Germany" = "Germany"
@@ -183,8 +182,8 @@ news-feed/_large/Coronavirus.png"></center>'
         ),
         mainPanel(
           leafletOutput("live_maps"),
-          p("This map display a global cumulated confirmed cases of
-            the COVID-19")
+          p("This map display
+            a global cumulated confirmed cases of the COVID-19")
         )
       )
     ),

@@ -28,11 +28,10 @@ map_data <- read.csv("data/report-3-07-20.csv", stringsAsFactors = F)
 # display a map of all the confirmed cases in by 3/07
 
 coronavirus_dataset <- read.csv("data/3-07 dataset/report-3-07-20.csv",
-                                stringsAsFactors = FALSE
+  stringsAsFactors = FALSE
 )
 
 my_server <- function(input, output, session) {
-
   output$confirmed_count <- renderPlotly(
     get_graph(input$country, raw_data2, input$color_given)
   )
@@ -44,11 +43,13 @@ my_server <- function(input, output, session) {
         Country.Region == input$select_country
       })
     data_popup_details <- datas %>%
-      mutate(popup_details = paste0("Location: ", Province.State,
-                                    ", ", Country.Region,
-                                    "</br>Confirmed: ", Confirmed,
-                                    "</br>Deaths: ", Deaths,
-                                    "</br>Recovered: ", Recovered))
+      mutate(popup_details = paste0(
+        "Location: ", Province.State, ", ", Country.Region,
+        "</br>Confirmed: ", Confirmed,
+        "</br>Deaths: ", Deaths,
+        "</br>Recovered: ", Recovered
+      ))
+
     leaflet(data_popup_details) %>%
       addTiles() %>%
       addCircleMarkers(
@@ -61,31 +62,34 @@ my_server <- function(input, output, session) {
   })
   output$confirmed_text <- renderText(
     paste("Confirmed:", map_data %>%
-            filter(if (input$select_country == "default") {
-              Country.Region == Country.Region
-            } else {
-              Country.Region == input$select_country
-            }) %>%
-            summarize(total = sum(Confirmed)) %>%
-            pull(total)))
+      filter(if (input$select_country == "default") {
+        Country.Region == Country.Region
+      } else {
+        Country.Region == input$select_country
+      }) %>%
+      summarize(total = sum(Confirmed)) %>%
+      pull(total))
+  )
   output$death_text <- renderText(
     paste("Deaths:", map_data %>%
-            filter(if (input$select_country == "default") {
-              Country.Region == Country.Region
-            } else {
-              Country.Region == input$select_country
-            }) %>%
-            summarize(total = sum(Deaths)) %>%
-            pull(total)))
+      filter(if (input$select_country == "default") {
+        Country.Region == Country.Region
+      } else {
+        Country.Region == input$select_country
+      }) %>%
+      summarize(total = sum(Deaths)) %>%
+      pull(total))
+  )
   output$recovered_text <- renderText(
     paste("Recovered:", map_data %>%
-            filter(if (input$select_country == "default") {
-              Country.Region == Country.Region
-            } else {
-              Country.Region == input$select_country
-            }) %>%
-            summarize(total = sum(Recovered)) %>%
-            pull(total)))
+      filter(if (input$select_country == "default") {
+        Country.Region == Country.Region
+      } else {
+        Country.Region == input$select_country
+      }) %>%
+      summarize(total = sum(Recovered)) %>%
+      pull(total))
+  )
 
   observeEvent(
     input$country_region,
@@ -146,9 +150,13 @@ my_server <- function(input, output, session) {
       values = ~percent,
       hovertemplate = paste("%{label} number: ", data4$number)
     ) %>%
-      layout(title = list(text = paste0("Percentage of Death & Recovery in ",
-                                        location),
-                          y = 0.05))
+      layout(title = list(
+        text = paste0(
+          "Percentage of Death & Recovery in ",
+          location
+        ),
+        y = 0.05
+      ))
   })
 
   output$summ_sb_lu_chosen_country <- renderText({
@@ -184,10 +192,11 @@ my_server <- function(input, output, session) {
       filter(Country.Region == input$country) %>%
       filter(total_count == max(total_count))
 
-    message_str <- paste0("Maximum number of cases: ",
-                          confirmed_max$total_count,
-                          " on ", confirmed_max$date
-                          )
+    message_str <- paste0(
+      "Maximum number of cases: ",
+      confirmed_max$total_count,
+      " on ", confirmed_max$date
+    )
   })
 
   output$summ_heading_two <- renderText({
@@ -224,9 +233,11 @@ my_server <- function(input, output, session) {
   output$recovery_rate <- renderText({
     rate_table <- map_data %>%
       filter(Country.Region == input$select_country) %>%
-      summarise(Confirmed = sum(Confirmed),
-                Deaths = sum(Deaths),
-                Recovered = sum(Recovered))
+      summarise(
+        Confirmed = sum(Confirmed),
+        Deaths = sum(Deaths),
+        Recovered = sum(Recovered)
+      )
 
     recov_rate <- round((rate_table$Recovered / rate_table$Confirmed) * 100, 2)
     message_str <- paste0("Recovery Rate: ", recov_rate)
@@ -235,9 +246,11 @@ my_server <- function(input, output, session) {
   output$death_rate <- renderText({
     rate_table <- map_data %>%
       filter(Country.Region == input$select_country) %>%
-      summarise(Confirmed = sum(Confirmed),
-                Deaths = sum(Deaths),
-                Recovered = sum(Recovered))
+      summarise(
+        Confirmed = sum(Confirmed),
+        Deaths = sum(Deaths),
+        Recovered = sum(Recovered)
+      )
     death_perc <- round((rate_table$Deaths / rate_table$Confirmed) * 100, 2)
     message_str <- paste0("Death Rate: ", death_perc)
   })
@@ -302,5 +315,4 @@ my_server <- function(input, output, session) {
                             recov_perc)
     }
   })
-
 }
