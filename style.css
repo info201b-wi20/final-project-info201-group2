@@ -1,19 +1,17 @@
 
 
 h1{
+  text-align: center;
+  border: 6px inset #1C6EA4;
+  border-radius: 32px 32px 32px 32px;
   font-family: 'Optima';
   color: #000000;
-  background-color: #F0F0F0;
 }
 h2{
+  border: 1px inset #1C6EA4;
   font-family: 'Optima';
   color: #000000;
-  background-color: #F0F0F0; 
   
-}
-
-body{
-  background-color: #F0F0F0;
 }
 
 p{

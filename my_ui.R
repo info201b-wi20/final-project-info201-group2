@@ -20,10 +20,7 @@ my_ui <- fluidPage(
     tabPanel(
       "Project Overview",
       h1("Coronavirus Research Project"),
-      tags$img(
-        src =
-        "https://storage.aanp.org/www/images/news-feed/_large/Coronavirus.png"
-      ),
+      HTML('<center><img src="https://storage.aanp.org/www/images/news-feed/_large/Coronavirus.png"></center>'),
       p(),
       ("Coronavirus (more formally referred to as novel Coronavirus;
         or COVID-19) is a large family of viruses that has newly
@@ -104,7 +101,7 @@ my_ui <- fluidPage(
 
     tabPanel(
       "Live Update",
-      sidebarLayout(
+      verticalLayout(
         sidebarPanel(
           div(
             h3("Confirmed Cases")
@@ -124,7 +121,9 @@ my_ui <- fluidPage(
                         "Black" = "black"
                       ))
         ),
-        mainPanel(plotlyOutput("confirmed_count"))
+        mainPanel(
+          width = 12,
+          plotlyOutput("confirmed_count"))
       )
     ),
 
