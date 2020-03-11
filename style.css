@@ -4,26 +4,27 @@ h1{
   text-align: center;
   border: 6px inset #1C6EA4;
   border-radius: 32px 32px 32px 32px;
-  font-family: 'Optima';
+  font-family: 'Arial';
   color: #000000;
 }
 h2{
   text-align: center;
   border: 1px inset #1C6EA4;
-  font-family: 'Optima';
+  font-family: 'Arial';
   color: #000000;
   
 }
 
 h3{
   border: 1px inset #1C6EA4;
-  font-family: 'Optima';
+  font-family: 'Arial';
   color: #000000;
   
 }
 
 p{
   color: #000000;
+  font-family: 'Arial';
 }
 
 tabPanel{
