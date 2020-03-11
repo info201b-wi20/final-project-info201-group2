@@ -183,8 +183,36 @@ my_ui <- fluidPage(
     tabPanel(
       "Summary Information",
       sidebarLayout(
-        sidebarPanel(),
-        mainPanel()
+        sidebarPanel(
+          h2("Selected Countries"),
+          h3("Live Update"),
+          textOutput(outputId = "summ_sb_lu_chosen_country"),
+          p(),
+          h3("Coronavirus Map"),
+          textOutput(outputId = "summ_sb_cm_chosen_country"),
+          p(),
+          h3("Percentage of Death and Recovery"),
+          textOutput(outputId = "summ_sb_perc_chosen_country"),
+          textOutput(outputId = "state_output")
+        ),
+        
+        mainPanel(
+          h2(textOutput(outputId = "summ_heading_lu")), 
+          h4(textOutput(outputId = "summ_info_one")),
+          p(),
+          h2(textOutput(outputId = "summ_heading_two")),
+          h4(textOutput(outputId = "map_info_one")),
+          h4(textOutput(outputId = "map_info_two")),
+          h4(textOutput(outputId = "map_info_three")), 
+          h4(textOutput(outputId = "recovery_rate")),
+          h4(textOutput(outputId = "death_rate")), 
+          p(), 
+          h2(textOutput(outputId = "summ_heading_three")), 
+          h4(textOutput(outputId = "rate_death")), 
+          h4(textOutput(outputId = "rate_recover"))
+          
+
+        )
       ),
     )
   )
