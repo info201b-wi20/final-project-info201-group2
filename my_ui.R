@@ -1,3 +1,14 @@
+library(shiny)
+library(leaflet)
+library(dplyr)
+
+
+map_data <- read.csv("data/report-3-07-20.csv")
+total_count <- map_data %>%
+  summarize(total_confirmed = sum(Confirmed),
+            total_deaths = sum(Deaths),
+            total_recovered = sum(Recovered))
+
 country_region_list <- coronavirus_dataset %>%
   arrange(Country.Region) %>%
   pull(Country.Region)
@@ -92,23 +103,60 @@ my_ui <- fluidPage(
     ),
 
     tabPanel(
-      "Coronavirus Map",
+      "Live Update",
       sidebarLayout(
         sidebarPanel(
-          "Insert Sidebar Widget Here"
+          div(
+            h3("Confirmed Cases")
+          ),
+          selectInput(inputId = "country",
+                      label = "Select a country",
+                      choices = list("US" = "US", "China" = "Mainland China",
+                                     "United Kingdoms" = "UK", "Japan" = "Japan",
+                                     "Korea" = "South Korea", "Italy" = "Italy",
+                                     "Iran" = "Iran", "France" = "France",
+                                     "Spain" = "Spain", "Germany" = "Germany")),
+          selectInput("color_given",
+                      "Choose a color:",
+                      choices = list(
+                        "Red" = "red", "Blue"= "blue",
+                        "Purple" = "purple",
+                        "Black" = "black"
+                      ))
         ),
-        mainPanel(
-          leafletOutput("my_map"),
-        )
-      ),
+        mainPanel(plotlyOutput("confirmed_count"))
+      )
     ),
 
     tabPanel(
-      "Interactive Page #2",
+      "Coronavirus Map",
       sidebarLayout(
-        sidebarPanel(),
-        mainPanel()
-      ),
+        sidebarPanel(
+          div(
+            h3("Global Confirmed Cases")
+          ),
+          selectInput(inputId = "select_country",
+                      label = "Select a country",
+                      choices = list("Default" = "default","US" = "US",
+                                     "China" = "Mainland China",
+                                     "United Kingdoms" = "UK", "Japan" = "Japan",
+                                     "Korea" = "South Korea",
+                                     "Italy" = "Italy","Italy" = "Italy",
+                                     "Iran" = "Iran", "France" = "France",
+                                     "Spain" = "Spain", "Germany" = "Germany")),
+          div(
+            strong(textOutput("confirmed_text")),
+            br(),
+            strong(textOutput("death_text")),
+            br(),
+            strong(textOutput("recovered_text")),
+            br()
+          )
+        ),
+        mainPanel(
+          leafletOutput("live_maps"),
+          p("This map display a global cumulated confirmed cases of the COVID-19"))
+      )
     ),
 
     tabPanel(
