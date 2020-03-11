@@ -94,13 +94,26 @@ my_server <- function(input, output, session) {
   )
 
   output$pie <- renderPlotly({
-    data1 <- coronavirus_dataset %>%
-      filter(
-        Country.Region == input$country_region,
-        Province.State == input$province_state
-      ) %>%
-      select(Confirmed, Deaths, Recovered) %>%
-      mutate("Patients" = Confirmed - Deaths - Recovered)
+    country_without_state <- coronavirus_dataset %>%
+      filter(Province.State == "") %>%
+      pull(Country.Region) %>%
+      unique()
+    if (input$country_region %in% country_without_state) {
+      data1 <- coronavirus_dataset %>%
+        filter(
+          Country.Region == input$country_region
+        ) %>%
+        select(Confirmed, Deaths, Recovered) %>%
+        mutate("Patients" = Confirmed - Deaths - Recovered)
+    } else {
+      data1 <- coronavirus_dataset %>%
+        filter(
+          Country.Region == input$country_region,
+          Province.State == input$province_state
+        ) %>%
+        select(Confirmed, Deaths, Recovered) %>%
+        mutate("Patients" = Confirmed - Deaths - Recovered)
+    }
     data2 <- data1 %>%
       summarize(
         "Patients" = !!as.name("Patients") / Confirmed,
@@ -118,7 +131,7 @@ my_server <- function(input, output, session) {
         value = number
       )
     data4 <- left_join(data2, data3, by = "category")
-
+    
     if (input$province_state == "") {
       location <- input$country_region
     } else {
@@ -129,7 +142,8 @@ my_server <- function(input, output, session) {
       values = ~percent,
       hovertemplate = paste("%{label} number: ", data4$number)
     ) %>%
-      layout(title = paste0("Percentage of Death & Recovery in ",
-                            location))
+      layout(title = list(text = paste0("Percentage of Death & Recovery in ",
+                                        location),
+                          y = 0.05))
   })
 }
