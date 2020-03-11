@@ -8,6 +8,14 @@ h1{
   color: #000000;
 }
 h2{
+  text-align: center;
+  border: 1px inset #1C6EA4;
+  font-family: 'Optima';
+  color: #000000;
+  
+}
+
+h3{
   border: 1px inset #1C6EA4;
   font-family: 'Optima';
   color: #000000;

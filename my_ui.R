@@ -18,6 +18,7 @@ my_ui <- fluidPage(
   navbarPage(
     "Coronavirus Data",
     tabPanel(
+
       "Project Overview",
       h1("Coronavirus Research Project"),
       HTML('<center><img src="https://storage.aanp.org/www/images/news-feed/_large/Coronavirus.png"></center>'),
@@ -38,24 +39,20 @@ my_ui <- fluidPage(
         raises concerns as this issue is now impacting our community
         directly."),
 
-      h2("What questions are we aiming to answer?"),
+      h3("What questions are we aiming to answer?"),
       p(
         "How is the lethality of the virus change over time?"
       ),
       p(
-        "According to several news sources there have been reported cases
-        of coronavirus that have been cured.
-        Has this made a tangible impact on decreasing the lethality
-        of this disease over time, or is it the rate at which it
-        is spreading more influential?"
+        "How is this virus spreading geographically? In what regions
+        is it the most severe, and if we have the data, which specific
+        states and provinces?"
       ),
       p(
-        "When does the infectiousness of the virus reach the
-        maximum? Has the rate at which it spreading it
-        already reached its peak (based on the given data)
-        or is it continuing to become more extreme?"
+        "How many patients who are sick with this virus dying vs recovering
+        in different areas across the world?"
       ),
-      h2("From where did we collect our data?"),
+      h3("From where did we collect our data?"),
 
       p(
         "The data is collected from researchers at Johns Hopkins University
@@ -64,7 +61,7 @@ my_ui <- fluidPage(
         government sources."
       ),
 
-      h2("Other projects involving coronavirus that we have come across"),
+      h3("Other projects involving coronavirus that we have come across"),
       p(),
       (
         "One of the most detailed data driven projects that we came across
@@ -101,10 +98,11 @@ my_ui <- fluidPage(
 
     tabPanel(
       "Live Update",
+      titlePanel("Live Update"),
       verticalLayout(
         sidebarPanel(
           div(
-            h3("Confirmed Cases")
+            h4("Confirmed Cases")
           ),
           selectInput(inputId = "country",
                       label = "Select a country",
@@ -129,10 +127,11 @@ my_ui <- fluidPage(
 
     tabPanel(
       "Coronavirus Map",
+      titlePanel("Coronavirus Map"),
       sidebarLayout(
         sidebarPanel(
           div(
-            h3("Global Confirmed Cases")
+            h4("Global Confirmed Cases")
           ),
           selectInput(inputId = "select_country",
                       label = "Select a country",
