@@ -183,7 +183,51 @@ news-feed/_large/Coronavirus.png"></center>'
         mainPanel(
           leafletOutput("live_maps"),
           p("This map display
-            a global cumulated confirmed cases of the COVID-19")
+            a global cumulated confirmed cases of the COVID-19"),
+          ("2/19/20 - Confirmed cases: 5 test positive treated in"),
+          a("Spokane.", href = paste0(
+            "https://www.seattletimes.com/nation-world/providence-sacred-heart-will
+                       -treat-5-coronavirus-patients/")
+          ),
+          p(),
+          ("2/28/20 - Confirmed cases: 1 tested postive in"),
+          a("Oregon, the first confirmed cases.", href = paste0(
+            "https://www.seattletimes.com/seattle-news/northwest/oregon-ramps-up-
+                       coronavirus-preparation-faces-challenges/")
+          ),
+          p(),
+          ("2/28/20 - Confirmed cases: 2 tested postive in"),
+          a("Washington, King and Snohomish counties", href = paste0(
+              "https://www.seattletimes.com/seattle-news/health/2-new-coronavirus-cases-emerge-in-washington-
+            in-king-county-and-snohomish-county/")
+          ),
+          p(),
+          ("3/02/20 - Suspected cases: Kirkland Firefighter have COVID-19 symptoms"),
+          p(),
+          ("3/02/20 - Confirmed cases: 50 or more show symptoms of COVID-19 in"),
+          a("Kirkland Nursing Home with 108 residents and 180 staff members", href = paste0(
+            "https://www.seattletimes.com/seattle-news/health/nursing-home
+            -outbreak-spotlights-coronavirus-risk-in-elder-care-facilities/")
+          ),
+          p(),
+          ("3/03/20 - Confirmed cases: 7 show symptoms of COVID-19 in"),
+          a("King county", href = paste0(
+            "https://www.seattletimes.com/seattle-news/health/seventh-washington-state-
+            residents-death-linked-to-coronavirus-disease/")
+          ),
+          p(),
+          ("3/06/20 - Confirmed cases: 1 tested postitive for COVID-19 in"),
+          a("Shoreline", href = paste0(
+            "https://www.seattletimes.com/seattle-news/health/coronavirus-daily-news-
+            update-march-6-what-to-know-today-about-covid-19
+            -in-the-seattle-area-washington-state-and-the-nation/")
+          ),
+          p(),
+          ("3/07/20 - Confirmed cases: 70 out of  180 staff members show symptoms of COVID-19 in"),
+          a("Kirkland Nursing Home", href = paste0(
+            "https://www.seattletimes.com/seattle-news/coronavirus-cases-may-be
+            -higher-than-reported-at-kirkland-nursing-home/")
+          )
         )
       )
     ),
